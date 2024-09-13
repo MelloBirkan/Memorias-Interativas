@@ -1,0 +1,16 @@
+{
+  "name": "memoriasInterativas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "devDependencies": {
+    "tailwindcss": "^3.4.11"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.9"
+  }
+}
