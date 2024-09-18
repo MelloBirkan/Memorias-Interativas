@@ -28,18 +28,21 @@ function registrar() {
   //obtendo elementos do formulario de registro
   const urlInput = document.getElementById("photo-input");
   const tagInput = document.getElementById("tag-input");
+  const dateInput = document.getElementById("date-input");
 
   //le os valores dos inputs
   const url = urlInput.value;
   const tag = tagInput.value;
+  const date = dateInput.value;
 
   //limpa campos do formulário
   urlInput.value = "";
   tagInput.value = "";
+  dateInput.value = "";
 
   //adiciona no vetor
   photos.push({
-    url, tag
+    url, tag, date
   });
 
   //limpa o filtro e
