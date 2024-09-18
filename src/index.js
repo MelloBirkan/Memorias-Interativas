@@ -1,19 +1,31 @@
 let photos = [{
-  url: "https://cdn.midjourney.com/c152dc9b-66ff-40dc-a007-3e34b88c1212/0_0.png",
-  tag: "Pudim",
-  date: "2023-12-15",
+  url: "https://cdn.midjourney.com/4014b415-e4aa-448f-9f6a-78b2e1327c67/0_0.png",
+  tag: "Cloud Strife",
+  date: "2000-08-11",
 }, {
-  url: "https://coisadefotografa.com/wp-content/uploads/2021/09/como-ter-fotos-mais-nitidas-scaled.jpg",
-  tag: "Criança",
-  date: "2032-12-24",
+  url: "https://www.cnet.com/a/img/resize/34fe1a54ec1c129958f1ca7e9fa71b10e4d591de/hub/2024/02/05/1d7f1f40-5b3c-42db-9d21-bf8dbe80cc97/ffvii-rebirth-december-keyart-16x9-png-jpgcopy.jpg?auto=webp&fit=crop&height=675&width=1200",
+  tag: "Final Fantasy 7 Rebirth",
+  date: "2024-02-29",
 }, {
-  url: "https://static.itdg.com.br/images/1200-630/749b72864d0cca0d369a14866ac1aa9a/shutterstock-290834552.jpg",
-  tag: "Maçãs",
-  date: "2021-12-03",
+  url: "https://gh.cdn.sewest.net/assets/ident/pulse/a218ace0/FFVIIRINTERGRADE_Available_Now-1vq9ttoa5.jpg?quality=65",
+  tag: "Final Fantasy 7 Remake",
+  date: "2020-04-10",
 }, {
-  url: "https://static-cse.canva.com/blob/759728/ComoTirareEditarSuaFotoparaPerfilemRedesSociaisfeaturedimagee1559023010630.994bef93.jpg",
-  tag: "Selfie",
-  date: "2024-01-14",
+  url: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2020/07/final-fantasy-7-party-members-artwork.jpg",
+  tag: "Final Fantasy 7 (OG)",
+  date: "1997-01-31",
+},  {
+  url: "https://scontent.fcgh15-1.fna.fbcdn.net/v/t39.30808-6/374687907_796256409167381_1206474237528333574_n.jpg?stp=dst-jpg_s1080x2048&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=TnfqKP74BAsQ7kNvgG_z75C&_nc_ht=scontent.fcgh15-1.fna&_nc_gid=Al5hmZ74a7v-uAX5yBhKQdc&oh=00_AYDU9HNTGR66aKPzmICJ9FT685LpvThjF4bFaSWli6ZbrA&oe=66F10AFA",
+  tag: "Final Fantasy 7 Ever Crisis)",
+  date: "2023-09-07",
+},  {
+  url: "https://sm.ign.com/ign_nordic/review/c/crisis-cor/crisis-core-final-fantasy-7-reunion-review_s594.jpg",
+  tag: "Final Fantasy 7 Crisis Core",
+  date: "2007-09-13",
+},  {
+  url: "https://cdn.midjourney.com/d9148e38-57ac-4a8b-81fb-0cc74451fa53/0_0.png",
+  tag: "Aerith Gainsborough",
+  date: "1999-02-07",
 },];
 
 // define a listra de fotos filtradas
