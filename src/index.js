@@ -54,7 +54,7 @@ toggleButton.addEventListener('click', function() {
   if (isChecked) {
     // Se estiver ativado, desative
     toggleButton.setAttribute('aria-checked', 'false');
-    toggleButton.classList.remove('bg-indigo-600');
+    toggleButton.classList.remove('bg-slate-600');
     toggleButton.classList.add('bg-gray-200');
 
     toggleCircle.classList.remove('translate-x-5');
@@ -68,7 +68,7 @@ toggleButton.addEventListener('click', function() {
     // Se estiver desativado, ative
     toggleButton.setAttribute('aria-checked', 'true');
     toggleButton.classList.remove('bg-gray-200');
-    toggleButton.classList.add('bg-indigo-600');
+    toggleButton.classList.add('bg-slate-600');
 
     toggleCircle.classList.remove('translate-x-0');
     toggleCircle.classList.add('translate-x-5');
