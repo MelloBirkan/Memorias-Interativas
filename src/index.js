@@ -20,9 +20,28 @@ let photos = [{
 // como sendo a propria lista de fotos
 // por padrao
 let filteredPhotos = photos;
+const sortByDate = (a, b) => new Date(a.date) - new Date(b.date)
+const sortByTag = (a, b) => a.tag.localeCompare(b.tag);
+const currentYearReminders = filteredPhotos.filter((photo) => new Date(photo.date).getFullYear() === 2024);
+const oldestReminderDate = filteredPhotos.reduce((oldest, photo) => {
+  const year = new Date(photo.date).getFullYear();
+  return year < oldest ? year : oldest;
+}, new Date().getFullYear());
 
 // ao carregar a tela chama a funcao updateList
-window.onload = updateList;
+window.onload = () => {
+  updateList();
+  buildFooter();
+};
+
+
+const buildFooter = () => {
+  let footer = document.querySelector('footer');
+  let node = document.createElement('p');
+  let text = document.createTextNode(`Total de lembranças registradas: ${filteredPhotos.length} | Lembranças tiradas em 2024: ${currentYearReminders.length} | Data da lembrança mais antiga: ${oldestReminderDate}`);
+  node.appendChild(text);
+  footer.appendChild(node);
+}
 
 function registrar() {
   //obtendo elementos do formulario de registro
@@ -59,18 +78,20 @@ function updateList() {
 
   //varrendo o vetor de photos para
   //adicionar na tela
-  for (let i = 0; i < filteredPhotos.length; i++) {
-    //construindo html
-    let html = `
+  filteredPhotos.toSorted(sortByDate).forEach(buildRemembranceList)
+}
+
+const buildRemembranceList = (photo) => {
+  //construindo html
+  let html = `
     <section class="md:bg-gray-800 md:px-3 md:py-5 rounded-2xl"> 
-      <img class="w-full aspect-square object-cover md:size-72 md:rounded-2xl" src="${filteredPhotos[i].url}" />
-      <p class="pl-1 text-md font-semibold leading-8 tracking-tight text-white">${filteredPhotos[i].tag}</p>
-      <p class="pl-1 text-sm leading-6 text-gray-500 mb-3">${new Date(filteredPhotos[i].date).toLocaleDateString("pt-BR")}</p>
+      <img class="w-full aspect-square object-cover md:size-72 md:rounded-2xl" src="${photo.url}" />
+      <p class="pl-1 text-md font-semibold leading-8 tracking-tight text-white">${photo.tag}</p>
+      <p class="pl-1 text-sm leading-6 text-gray-500 mb-3">${new Date(photo.date).toLocaleDateString("pt-BR")}</p>
     </section>`;
 
-    // concatena o html com o resto da lista
-    list.innerHTML += html;
-  }
+  // concatena o html com o resto da lista
+  list.innerHTML += html;
 }
 
 function filterPhotos() {
