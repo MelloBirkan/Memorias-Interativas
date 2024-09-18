@@ -22,25 +22,75 @@ let photos = [{
 let filteredPhotos = photos;
 const sortByDate = (a, b) => new Date(a.date) - new Date(b.date)
 const sortByTag = (a, b) => a.tag.localeCompare(b.tag);
-const currentYearReminders = filteredPhotos.filter((photo) => new Date(photo.date).getFullYear() === 2024);
-const oldestReminderDate = filteredPhotos.reduce((oldest, photo) => {
+
+const currentYearReminders = () => filteredPhotos.filter((photo) => new Date(photo.date).getFullYear() === 2024);
+const oldestReminderDate = () =>  filteredPhotos.reduce((oldest, photo) => {
   const year = new Date(photo.date).getFullYear();
   return year < oldest ? year : oldest;
 }, new Date().getFullYear());
 
+// Pegando os elementos
+const toggleButton = document.getElementById('toggleButton');
+const toggleCircle = document.getElementById('toggleCircle');
+const iconOn = document.getElementById('iconOn');
+const iconOff = document.getElementById('iconOff');
+
+// Função de alternância
+toggleButton.addEventListener('click', function() {
+  const isChecked = toggleButton.getAttribute('aria-checked') === 'true';
+
+  if (isChecked) {
+    // Se estiver ativado, desative
+    toggleButton.setAttribute('aria-checked', 'false');
+    toggleButton.classList.remove('bg-indigo-600');
+    toggleButton.classList.add('bg-gray-200');
+
+    toggleCircle.classList.remove('translate-x-5');
+    toggleCircle.classList.add('translate-x-0');
+
+    iconOn.classList.remove('opacity-100');
+    iconOn.classList.add('opacity-0');
+    iconOff.classList.remove('opacity-0');
+    iconOff.classList.add('opacity-100');
+  } else {
+    // Se estiver desativado, ative
+    toggleButton.setAttribute('aria-checked', 'true');
+    toggleButton.classList.remove('bg-gray-200');
+    toggleButton.classList.add('bg-indigo-600');
+
+    toggleCircle.classList.remove('translate-x-0');
+    toggleCircle.classList.add('translate-x-5');
+
+    iconOn.classList.remove('opacity-0');
+    iconOn.classList.add('opacity-100');
+    iconOff.classList.remove('opacity-100');
+    iconOff.classList.add('opacity-0');
+  }
+
+  updateList();
+});
+
 // ao carregar a tela chama a funcao updateList
 window.onload = () => {
   updateList();
-  buildFooter();
 };
 
 
 const buildFooter = () => {
   let footer = document.querySelector('footer');
+
+  let oldNode = footer.querySelector('p') || null;
+
+  // Cria um novo parágrafo
   let node = document.createElement('p');
-  let text = document.createTextNode(`Total de lembranças registradas: ${filteredPhotos.length} | Lembranças tiradas em 2024: ${currentYearReminders.length} | Data da lembrança mais antiga: ${oldestReminderDate}`);
+  let text = document.createTextNode(`Total de lembranças registradas: ${filteredPhotos.length} | Lembranças tiradas em 2024: ${currentYearReminders().length} | Data da lembrança mais antiga: ${oldestReminderDate()}`);
   node.appendChild(text);
-  footer.appendChild(node);
+
+  if (oldNode) {
+    footer.replaceChild(node, oldNode);
+  } else {
+    footer.appendChild(node);
+  }
 }
 
 function registrar() {
@@ -76,9 +126,9 @@ function updateList() {
   //limpando a lista
   list.innerHTML = "";
 
-  //varrendo o vetor de photos para
-  //adicionar na tela
-  filteredPhotos.toSorted(sortByDate).forEach(buildRemembranceList)
+  filteredPhotos.toSorted(toggleButton.getAttribute('aria-checked') === 'true' ? sortByTag : sortByDate).forEach(buildRemembranceList);
+
+  buildFooter()
 }
 
 const buildRemembranceList = (photo) => {
