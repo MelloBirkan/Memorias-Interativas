@@ -1,15 +1,15 @@
 let photos = [{
-  url: "https://static.itdg.com.br/images/360-240/d1307a2e17cda187df76b78cfd3ac464/shutterstock-2322251819-1-.jpg",
-  tag: "pudim"
+  url: "https://cdn.midjourney.com/c152dc9b-66ff-40dc-a007-3e34b88c1212/0_0.png",
+  tag: "Pudim"
 }, {
   url: "https://coisadefotografa.com/wp-content/uploads/2021/09/como-ter-fotos-mais-nitidas-scaled.jpg",
-  tag: "criança"
+  tag: "Criança"
 }, {
   url: "https://static.itdg.com.br/images/1200-630/749b72864d0cca0d369a14866ac1aa9a/shutterstock-290834552.jpg",
-  tag: "maçãs"
+  tag: "Maçãs"
 }, {
   url: "https://static-cse.canva.com/blob/759728/ComoTirareEditarSuaFotoparaPerfilemRedesSociaisfeaturedimagee1559023010630.994bef93.jpg",
-  tag: "selfie"
+  tag: "Selfie"
 },];
 
 // define a listra de fotos filtradas
@@ -55,9 +55,10 @@ function updateList() {
   for (let i = 0; i < filteredPhotos.length; i++) {
     //construindo html
     let html = `
-    <section class="card">
-      <img src="${filteredPhotos[i].url}" />
-      <p>${filteredPhotos[i].tag}</p>
+    <section> 
+      <img class="w-full aspect-square object-cover" src="${filteredPhotos[i].url}" />
+      <p class="pl-1 text-lg font-semibold leading-8 tracking-tight text-white">${filteredPhotos[i].tag}</p>
+      <p class="pl-1 text-sm leading-6 text-gray-500 mb-3">Toronto, Canada</p>
     </section>`;
 
     // concatena o html com o resto da lista
