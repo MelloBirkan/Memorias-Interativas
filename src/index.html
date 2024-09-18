@@ -8,22 +8,22 @@
 </head>
 <body class="w-full h-full flex flex-col items-center">
 <header class="mx-auto max-w-2xl text-center px-3">
-  <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Recordações</h2>
-  <p class="mt-2 text-lg leading-8 text-gray-600">Learn how to grow your business with our expert advice.</p>
+  <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Sistema de Recordações</h2>
+  <p class="mt-2 mb-4 text-md leading-8 text-gray-600">Suas memórias filtradas para momentos especiais</p>
 </header>
 
-<section id="forms" class="w-full h-full flex justify-center gap-7 flex-col mx-auto px-3">
-  <section id="add-form" class="flex flex-col space-y-3">
+<section id="forms" class="w-full h-full flex  justify-center gap-7 flex-col mx-auto px-3 md:flex-row md:justify-evenly md:mx-0">
+  <section id="add-form" class="flex flex-col space-y-3 md:w-96">
     <input type="text" name="photo-input" id="photo-input"
-           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
            placeholder="URL da imagem"/>
 
     <input type="text" name="tag-input" id="tag-input"
-           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
            placeholder="TAG"/>
 
     <button onclick="registrar()" type="button"
-            class="flex items-center gap-x-1.5 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ">
+            class="flex items-center gap-x-1.5 rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 ">
       Registrar
       <svg class="-mr-0.5 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
         <path fill-rule="evenodd"
@@ -33,28 +33,28 @@
     </button>
   </section>
 
-  <section id="filter-form" class="flex flex-col justify-between space-y-3">
+  <section id="filter-form" class="flex flex-col justify-between space-y-3 md:w-96">
     <input type="text" name="filter-text" id="filter-text"
-           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
            placeholder="filtrar por TAG"/>
 
     <span class="isolate inline-flex rounded-md shadow-sm justify-center">
     <button onclick="filterPhotos()" type="button"
-            class="relative inline-flex items-center justify-center rounded-l-md px-3 py-2 text-sm font-semibold text-indigo-100 ring-1 ring-inset ring-gray-300 bg-indigo-600 hover:bg-indigo-500 focus:z-10 w-full">Filtrar</button>
+            class="relative inline-flex items-center justify-center rounded-l-md px-3 py-2 text-sm font-semibold text-gray-100 ring-1 ring-inset ring-gray-300 bg-gray-600 hover:bg-gray-500 focus:z-10 w-full">Filtrar</button>
     <button onclick="cleanFilter()" type="button"
-            class="relative -ml-px inline-flex items-center justify-center rounded-r-md px-3 py-2 text-sm font-semibold text-indigo-100 ring-1 ring-inset ring-gray-300 bg-indigo-600 hover:bg-indigo-500 focus:z-10 w-full">Limpar Filtro</button>
+            class="relative -ml-px inline-flex items-center justify-center rounded-r-md px-3 py-2 text-sm font-semibold text-gray-100 ring-1 ring-inset ring-gray-300 bg-gray-600 hover:bg-gray-500 focus:z-10 w-full">Limpar Filtro</button>
   </span>
   </section>
 </section>
 
-<main class="bg-gray-900 py-11 sm:py-32 rounded-3xl mt-5 mb-5">
-<div class="lg:px-8">
+<main class="bg-gray-900 py-5 sm:py-12 rounded-3xl mt-5 mb-5 md:h-fit">
+<div class="md:px-8">
   <div class="mx-auto max-w-2xl px-6 mb-4 text-center">
-    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Recordações</h2>
-    <p class="mt-4 text-lg leading-8 text-gray-400">Essas são as suas recordações, cuidadosamente selecionadas com base nos filtros escolhidos.</p>
+    <h2 class="text-3xl font-bold tracking-tight text-white md:text-4xl">Recordações</h2>
+    <p class="mt-4 text-md leading-8 text-gray-400">Essas são as suas recordações, cuidadosamente selecionadas com base nos filtros escolhidos.</p>
   </div>
 
-  <section id="list" class="w-full flex flex-col items-center gap-3 lg:flex-row"></section>
+  <section id="list" class="w-full flex flex-col items-center gap-3 md:flex-row md:flex-wrap md:justify-center"></section>
 </div>
 </main>
 <script src="index.js"></script>
