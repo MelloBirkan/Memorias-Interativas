@@ -68,7 +68,7 @@ toggleButton.addEventListener('click', function() {
     // Se estiver desativado, ative
     toggleButton.setAttribute('aria-checked', 'true');
     toggleButton.classList.remove('bg-gray-200');
-    toggleButton.classList.add('bg-slate-600');
+    toggleButton.classList.add('bg-gray-600');
 
     toggleCircle.classList.remove('translate-x-0');
     toggleCircle.classList.add('translate-x-5');
